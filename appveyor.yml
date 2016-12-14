@@ -10,7 +10,6 @@ environment:
       CONDA_PY: "27"
 
 install:
-  - rmdir C:\cygwin /s /q
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - ls C:/msys64/usr/bin
   - ls C:/msys64/usr/lib
@@ -34,7 +33,12 @@ build_script:
 test_script:
   - echo "hello"
   - python -c "import numpy; print(numpy)"
-  - "sh -lc \"C:/msys64/usr/bin/pacman -S --noconfirm --needed
+  - set HOME=.
+  - set MSYSTEM=MINGW64
+  - set PATH=C:/msys64/usr/bin;C:/msys64/mingw64/bin;%PATH%
+  - "sh -lc \"pacman -S --noconfirm --needed
+      mingw-w64-x86_64-python2-numpy
     \""
   - C:/msys64/mingw64/bin/python -c "import pytraj; pytraj.run_tests()"
+  - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import pytraj; pytraj.run_tests()"
