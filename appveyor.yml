@@ -13,6 +13,7 @@ install:
   - rmdir C:\cygwin /s /q
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - where python
+  - conda install numpy -y
   - sh devtools/win/download_pytraj.sh
 
 build_script:
