@@ -11,6 +11,7 @@ environment:
 
 install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - set ORIGPATH=%PATH%
   - ls C:/msys64/usr/bin
   - ls C:/msys64/usr/lib
   - ls C:/msys64/mingw64/bin
@@ -40,5 +41,5 @@ test_script:
       mingw-w64-x86_64-python2-numpy
     \""
   - C:/msys64/mingw64/bin/python -c "import pytraj; pytraj.run_tests()"
-  - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - set PATH=%ORIGPATH%
   - python -c "import pytraj; pytraj.run_tests()"
