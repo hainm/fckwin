@@ -1,4 +1,4 @@
-os: Windows Server 2012
+os: Visual Studio 2015
 environment:
   global:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
@@ -26,6 +26,7 @@ install:
   - ls pytraj
   - ls pytraj/core/*pyd
   - tasklist /m /fi "imagename eq pytraj/core/topology_objects.pyd"
+  - dumpbin /imports pytraj/core/topology_objects.pyd
   # - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
   # - cat my.csv
 
