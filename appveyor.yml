@@ -15,6 +15,9 @@ install:
   - where python
   - python -m pip install numpy # to avoid mkl
   - sh devtools/win/download_pytraj.sh
+  - ls pytraj
+  - ls pytraj/core/*pyd
+  - ldd pytraj/core/topology_objects.pyd
 
 build_script:
   - echo "only build libcpptraj"
