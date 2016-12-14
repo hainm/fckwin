@@ -26,7 +26,7 @@ install:
   - where python
   - sh devtools/win/download_pip.sh
   - sh devtools/win/download_pytraj.sh
-  - sh devtools/win/install_notebook_deps.sh
+  # - sh devtools/win/install_notebook_deps.sh
   - sh devtools/win/install_notebook.sh
 
 build_script:
