@@ -12,14 +12,18 @@ environment:
 install:
   - rmdir C:\cygwin /s /q
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - ls C:/msys64/usr/bin
+  - ls C:/msys64/usr/lib
+  - ls C:/msys64/mingw64/bin
+  - ls C:/msys64/mingw64/lib
   - where python
   - python -m pip install numpy # to avoid mkl
   - sh devtools/win/download_pytraj.sh
   - sh devtools/win/download_dependencywalker.sh
   - ls pytraj
   - ls pytraj/core/*pyd
-  - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
-  - cat my.csv
+  # - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
+  # - cat my.csv
 
 build_script:
   - echo "only build libcpptraj"
