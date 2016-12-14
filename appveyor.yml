@@ -18,7 +18,7 @@ install:
   - sh devtools/win/download_dependencywalker.sh
   - ls pytraj
   - ls pytraj/core/*pyd
-  - depends22_x86/depend.exe /oc:my.csv pytraj/core/topology_objects.pyd
+  - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
   - cat my.csv
 
 build_script:
