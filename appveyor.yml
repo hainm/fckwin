@@ -25,6 +25,7 @@ install:
   - cp C:/msys64/mingw64/bin/libstdc++-6.dll pytraj/
   - ls pytraj
   - ls pytraj/core/*pyd
+  - dumpbin /imports pytraj/core/topology_objects.pyd
   # - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
   # - cat my.csv
 
