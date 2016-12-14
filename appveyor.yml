@@ -15,6 +15,7 @@ install:
   - where python
   - python -m pip install numpy # to avoid mkl
   - sh devtools/win/download_pytraj.sh
+  - sh devtools/win/download_dependencywalker.sh
   - ls pytraj
   - ls pytraj/core/*pyd
   - depends22_x86/depend.exe /oc:my.csv pytraj/core/topology_objects.pyd
