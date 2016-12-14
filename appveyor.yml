@@ -24,6 +24,7 @@ install:
       diffutils
     \""
   - where python
+  - cp devtools/win/distutils.cfg %HOME%/.pydistutils.cfg
   - sh devtools/win/download_pip.sh
   - sh devtools/win/download_pytraj.sh
   # - sh devtools/win/install_notebook_deps.sh
