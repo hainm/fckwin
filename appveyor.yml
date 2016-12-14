@@ -29,4 +29,5 @@ test_script:
       mingw-w64-x86_64-python2-numpy
     \""
   - sh devtools/win/download_pip.sh
+  - python -m pip install setuptools
   - python -m pip install notebook
