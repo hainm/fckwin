@@ -34,4 +34,5 @@ build_script:
 test_script:
   - echo "hello"
   - python -c "import numpy; print(numpy)"
+  - C:/msys64/mingw64/bin/python -c "import pytraj; pytraj.run_tests()"
   - python -c "import pytraj; pytraj.run_tests()"
