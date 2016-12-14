@@ -28,8 +28,6 @@ test_script:
   - "sh -lc \"pacman -S --noconfirm --needed
       mingw-w64-x86_64-python2-numpy
       mingw-w64-x86_64-python2-ipython
-      mingw-w64-x86_64-python2-notebook
-      mingw-w64-python-ipython
     \""
   - sh devtools/win/download_pip.sh
   - python -m pip install setuptools
