@@ -17,7 +17,8 @@ install:
   - sh devtools/win/download_pytraj.sh
   - ls pytraj
   - ls pytraj/core/*pyd
-  - ldd pytraj/core/topology_objects.pyd
+  - depends22_x86/depend.exe /oc:my.csv pytraj/core/topology_objects.pyd
+  - cat my.csv
 
 build_script:
   - echo "only build libcpptraj"
