@@ -33,4 +33,7 @@ test_script:
     \""
   - sh devtools/win/download_pip.sh
   - python -m pip install setuptools
-  - python -m pip install notebook --user
+  - git clone https://github.com/Alexpux/MINGW-packages
+  - cd MINGW-packages/mingw-w64-python-pandas
+  - MINGW_INSTALLS=mingw64 makepkg-mingw -sLf
+  # - python -m pip install notebook --user
