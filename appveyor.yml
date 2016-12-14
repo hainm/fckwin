@@ -29,9 +29,11 @@ test_script:
       mingw-w64-x86_64-python2-numpy
       mingw-w64-x86_64-python2-ipython
     \""
+  - python -m IPython --version
   - sh devtools/win/download_pip.sh
   - python -m pip install setuptools
   - git clone https://github.com/Alexpux/MINGW-packages
   - cd MINGW-packages/mingw-w64-python-pandas
-  - MINGW_INSTALLS=mingw64 makepkg-mingw -sLf
+  - set MINGW_INSTALLS=mingw64
+  - makepkg-mingw -sLf
   # - python -m pip install notebook --user
