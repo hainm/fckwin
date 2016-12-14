@@ -10,12 +10,22 @@ environment:
       CONDA_PY: "27"
 
 install:
-  - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
-  - set ORIGPATH=%PATH%
+  - set HOME=.
+  - set MSYSTEM=MINGW64
+  - set PATH=%PATH%;C:/msys64/usr/bin;C:/msys64/mingw64/bin
+  - "sh -lc \"pacman -S --noconfirm --needed
+      mingw-w64-x86_64-openblas
+      mingw-w64-x86_64-arpack
+      mingw-w64-x86_64-gcc
+      mingw-w64-x86_64-gcc-fortran
+      mingw-w64-x86_64-ncurses
+      mingw-w64-x86_64-readline
+      mingw-w64-x86_64-python2-numpy
+      diffutils
+    \""
   - where python
-  - python -m pip install numpy # to avoid mkl
   - sh devtools/win/download_pytraj.sh
-  - sh devtools/win/install_tornado.sh
+  - sh devtools/win/install_notebook_deps.sh
   - sh devtools/win/install_notebook.sh
 
 build_script:
