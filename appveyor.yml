@@ -34,5 +34,7 @@ build_script:
 test_script:
   - echo "hello"
   - python -c "import numpy; print(numpy)"
+  - "sh -lc \"C:/msys64/usr/bin/pacman -S --noconfirm --needed
+    \""
   - C:/msys64/mingw64/bin/python -c "import pytraj; pytraj.run_tests()"
   - python -c "import pytraj; pytraj.run_tests()"
