@@ -19,29 +19,14 @@ install:
   - where python
   - python -m pip install numpy # to avoid mkl
   - sh devtools/win/download_pytraj.sh
-  - sh devtools/win/download_dependencywalker.sh
-  - cp C:/msys64/usr/lib/libpython2.7.dll.a pytraj/
-  - cp C:/msys64/mingw64/bin/libgcc_s_seh-1.dll pytraj/
-  - cp C:/msys64/mingw64/bin/libstdc++-6.dll pytraj/
-  - ls pytraj
-  - ls pytraj/core/*pyd
-  - tasklist /m /fi "imagename eq pytraj/core/topology_objects.pyd"
-  - dumpbin /imports pytraj/core/topology_objects.pyd
-  # - depends.exe /oc:my.csv pytraj/core/topology_objects.pyd
-  # - cat my.csv
 
 build_script:
   - echo "only build libcpptraj"
  
 test_script:
-  - echo "hello"
-  - python -c "import numpy; print(numpy)"
-  - set HOME=.
-  - set MSYSTEM=MINGW64
   - set PATH=C:/msys64/usr/bin;C:/msys64/mingw64/bin;%PATH%
   - "sh -lc \"pacman -S --noconfirm --needed
       mingw-w64-x86_64-python2-numpy
     \""
-  - C:/msys64/mingw64/bin/python -c "import pytraj; pytraj.run_tests()"
-  - set PATH=%ORIGPATH%
-  - python -c "import pytraj; pytraj.run_tests()"
+  - sh devtools/win/download_pip.sh
+  - python -m pip install notebook
